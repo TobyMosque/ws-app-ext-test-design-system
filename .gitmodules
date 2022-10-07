@@ -1,0 +1,12 @@
+
+[submodule "q-design-system"]
+path = q-design-system
+url = https://github.com/TobyMosque/app-ext-test-design-system.git
+
+[submodule "q-dsl-name-a"]
+path = q-dsl-name-a
+url = https://github.com/TobyMosque/app-ext-test-dsl-name-a.git
+
+[submodule "q-dsl-name-b"]
+path = q-dsl-name-b
+url = https://github.com/TobyMosque/app-ext-test-dsl-name-b.git

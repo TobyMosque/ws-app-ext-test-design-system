@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "q-design-system/**/*",
+      "q-dsl-name-a/**/*",
+      "q-dsl-name-b/**/*"
+    ]
+  },
+  "scripts": {
+    "ext:system:build": "yarn workspace quasar-ui-design-system build",
+    "ext:system:dev": "yarn workspace quasar-ui-design-system dev",
+
+    "ext:dsl-a:build": "yarn workspace quasar-ui-dsl-name-a build",
+    "ext:dsl-a:dev": "yarn workspace quasar-ui-dsl-name-a dev",
+
+    "app:dsl-a:start": "yarn workspace dsl-name-a-app quasar dev",
+    "app:dsl-a:install": "yarn app:dsl-a:install-dsl && yarn app:dsl-a:install-theme",
+    "app:dsl-a:install-dsl": "yarn workspace dsl-name-a-app quasar ext add design-system@0.0.1",
+    "app:dsl-a:install-theme": "yarn workspace dsl-name-a-app quasar ext add dsl-name-a@0.0.1",
+
+    "ext:dsl-b:build": "yarn workspace quasar-ui-dsl-name-b build",
+    "ext:dsl-b:dev": "yarn workspace quasar-ui-dsl-name-b dev",
+
+    "app:dsl-b:start": "yarn workspace dsl-name-b-app quasar dev",
+    "app:dsl-b:install": "yarn app:dsl-b:install-dsl && yarn app:dsl-b:install-theme",
+    "app:dsl-b:install-dsl": "yarn workspace dsl-name-b-app quasar ext add design-system@0.0.1",
+    "app:dsl-b:install-theme": "yarn workspace dsl-name-b-app quasar ext add dsl-name-b@0.0.1",
+
+    "postinstall": "yarn ext:system:build && yarn ext:dsl-a:build && yarn ext:dsl-b:build"
+  }
+}
+
